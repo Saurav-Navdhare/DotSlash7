@@ -1,5 +1,7 @@
 import React  , { useState } from 'react'
 import "./Gyaan.css";
+import "./navbarcss.css";
+import Navbar from "./navbar";
 const Gyaan = () => {
     const [Text1, setText1] = useState('')
     const [Text2, setText2] = useState('')
@@ -75,23 +77,26 @@ const Gyaan = () => {
 
   return (
     <>
+    <div id="root">
+    <Navbar/>
         <h1>GYAAN PATH</h1>
         <div id="form1">
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md">Topic</label>
+
+            <form onSubmit={handleSubmit}>   
+                <div class="labell">
+                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md labell">Topic: </label>
                     <input type='text' name="text1" placeholder='dsa' value={Text1} onChange={e => setText1(e.target.value)}/>
                 </div>
-                <div>
-                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md">Time/Duration: </label>
+                <div class="labell">
+                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md labell">Time/Duration: </label>
                     <input type='text' name="text2" placeholder='3 months' value={Text2} onChange={e => setText2(e.target.value)}/>
                 </div>
-                <div>
-                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md">Level: </label>
+                <div class="labell">
+                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded- labell">Level: </label>
                     <input type='text' name="text3" placeholder='newbie' value={Text3} onChange={e => setText3(e.target.value)}/>
                 </div>
-                <div>
-                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md">additional comments: </label>
+                <div class="labell">
+                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md labell">additional comments: </label>
                     <input type='text' name="text4" placeholder='from c++' value={Text4} onChange={e => setText4(e.target.value)}/>
                 </div>
                 <button>Submit</button>
@@ -106,7 +111,8 @@ const Gyaan = () => {
             </form>
         </div>
         
-        <button onClick={handleClear}>Clear</button>
+        <button id="clearchat" onClick={handleClear}>Clear Chat</button>
+        </div>
     </>
   )
 }
