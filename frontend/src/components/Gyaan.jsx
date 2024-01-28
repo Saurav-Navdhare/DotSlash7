@@ -110,7 +110,7 @@ const Gyaan = () => {
        
         </div>
         <pre className="custom-pre">
-            {info["response"].replace(/\*/g, '')}
+            {info["response"]}
         </pre>
         <div id="form2" class="hide">
             <form onSubmit={handleSubmit2}>
