@@ -78,17 +78,30 @@ const Gyaan = () => {
         <h1>GYAAN PATH</h1>
         <div id="form1">
             <form onSubmit={handleSubmit}>
-                <input type='text' placeholder='topic' value={Text1} onChange={e => setText1(e.target.value)}/>
-                <input type='text' placeholder='time' value={Text2} onChange={e => setText2(e.target.value)}/>
-                <input type='text' placeholder='level' value={Text3} onChange={e => setText3(e.target.value)}/>
-                <input type='text' placeholder='additional comments' value={Text4} onChange={e => setText4(e.target.value)}/>
+                <div>
+                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md">Topic</label>
+                    <input type='text' name="text1" placeholder='dsa' value={Text1} onChange={e => setText1(e.target.value)}/>
+                </div>
+                <div>
+                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md">Time/Duration: </label>
+                    <input type='text' name="text2" placeholder='3 months' value={Text2} onChange={e => setText2(e.target.value)}/>
+                </div>
+                <div>
+                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md">Level: </label>
+                    <input type='text' name="text3" placeholder='newbie' value={Text3} onChange={e => setText3(e.target.value)}/>
+                </div>
+                <div>
+                    <label htmlFor='text1' className="bg-white text-black mx-5 px-3 rounded-md">additional comments: </label>
+                    <input type='text' name="text4" placeholder='from c++' value={Text4} onChange={e => setText4(e.target.value)}/>
+                </div>
                 <button>Submit</button>
             </form>
         </div>
         <pre>{info["response"]}</pre>
         <div id="form2" class="hide">
             <form onSubmit={handleSubmit2}>
-                <input type='text' placeholder='prompt' value={Text1} onChange={e => setText1(e.target.value)}/>
+                <label htmlFor="prompt">Prompt: </label>
+                <input type='text' name="prompt" placeholder='prompt' value={Text1} onChange={e => setText1(e.target.value)}/>
                 <button>Submit</button>
             </form>
         </div>

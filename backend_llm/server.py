@@ -3,6 +3,7 @@ from llama_index.llms import Gemini
 from llama_index import ServiceContext
 from llama_index.embeddings import GeminiEmbedding
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from dotenv import load_dotenv
 import os
 
@@ -19,13 +20,13 @@ service_context = ServiceContext.from_defaults(
 )
 
 app = Flask(__name__)
-
+CORS(app) 
 chat_engine = SimpleChatEngine.from_defaults(service_context=service_context)
 
 @app.route('/chat', methods=['POST'])
 def chat():
     data = request.get_json()
-    isFirst = data['isFirst']
+    prompt = data["prompt"]
     if(prompt):
         prompt = data['prompt']
         return jsonify(chat_engine.chat(prompt))
@@ -41,6 +42,11 @@ def chat():
         prompt = prompt + "Additional Notes by user: " + addComm
     response = chat_engine.chat(prompt)
     return jsonify(response)
+
+@app.route("/chat", methods=["DELETE"])
+def delete():
+    chat_engine.clear_chat()
+    return jsonify({"message": "Chat history deleted."})
 
 if(__name__ == '__main__'):
     app.run(debug=True)
