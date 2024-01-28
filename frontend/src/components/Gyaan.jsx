@@ -1,6 +1,9 @@
 import React  , { useState } from 'react'
+import img from '../assets/boy.png';
+import img2 from '../assets/map.png';
 import "./Gyaan.css";
 import "./navbarcss.css";
+import "./pre.css";
 import Navbar from "./navbar";
 const Gyaan = () => {
     const [Text1, setText1] = useState('')
@@ -80,6 +83,8 @@ const Gyaan = () => {
     <div id="root">
     <Navbar/>
         <h1>GYAAN PATH</h1>
+        <div className='shrey'>
+            <img src={img} style={{ height: '300px', width: '200px' ,marginRight:'100px'}} />
         <div id="form1">
 
             <form onSubmit={handleSubmit}>   
@@ -102,7 +107,11 @@ const Gyaan = () => {
                 <button>Submit</button>
             </form>
         </div>
-        <pre>{info["response"]}</pre>
+       
+        </div>
+        <pre className="custom-pre">
+            {info["response"].replace(/\*/g, '')}
+        </pre>
         <div id="form2" class="hide">
             <form onSubmit={handleSubmit2}>
                 <label htmlFor="prompt">Prompt: </label>

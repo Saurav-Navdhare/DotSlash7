@@ -1,5 +1,5 @@
 * {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     color: black;
 }
 
@@ -12,12 +12,13 @@
 }
 
 #root{
-
+background-color: #ffffff;
         max-width: 1280px;
         margin: 0 auto;
         padding: 2rem;
         text-align: center;
         margin-top: 20px;
+        
 }
 
 #form1,
@@ -60,15 +61,17 @@
     border: none;
     border-radius: 5px;
     font-size: 1em;
-    background-color: #fff;
+    background-color: #e2e2e2;
 }
 
 #form1 button,
 #form2 button {
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-color: #3498db;
     background-color: #fff;
+    border-radius: 5px;
+    
   
     cursor: pointer;
     font-size: 1.2em;
@@ -82,4 +85,9 @@
 
 .hide {
     display: none;
+}
+
+.shrey {
+    display: flex;
+    /* align-items: ; */
 }

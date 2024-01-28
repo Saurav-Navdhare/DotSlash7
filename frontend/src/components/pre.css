@@ -1,0 +1,8 @@
+.custom-pre {
+    background-color: #b8b7b7;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    overflow-x: auto;  /* optional, for horizontal scrolling if needed */
+    font-family: Arial, sans-serif; /* Change the font to Arial or any other sans-serif font */
+}
